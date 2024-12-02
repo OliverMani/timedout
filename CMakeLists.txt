@@ -5,3 +5,5 @@ file(GLOB SOURCES src/*.c)
 include_directories(include/)
 
 add_executable(timedout ${SOURCES})
+
+install(TARGETS timedout RUNTIME DESTINATION bin)

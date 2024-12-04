@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+static const char *DEFAULT_TIME_FORMAT = "%H:%M:%S";
+
 void setup_default_configuration(struct config *config) {
     config->is_clock = false;
     config->include_ms = false;

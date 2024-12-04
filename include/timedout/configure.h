@@ -3,9 +3,6 @@
 
 #include <stdio.h>
 #include "bool.h"
-
-static const char *DEFAULT_TIME_FORMAT = "%H:%M:%S";
-
 /**
  * Configuration object, which confains settings for the process
  */

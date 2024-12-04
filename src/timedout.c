@@ -9,8 +9,6 @@
 #define BUFFER_CHUNK_SIZE 1024
 #define MAX_DATETIME_STRING_LENGTH 64
 
-const char *PREFIX = "Line: ";
-
 /*
     Quick function to construct a timeval with current time.
 */

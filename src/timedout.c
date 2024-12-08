@@ -59,9 +59,9 @@ int main(int argc, char **argv) {
         if(is_new_line) {
             struct timeval now = get_timeval_now();
             if(!config.is_clock) {
-                time_elapsed = (now.tv_sec - start_tv.tv_sec) * 1.0e9 + (now.tv_usec - start_tv.tv_usec);
-                now.tv_sec   = time_elapsed / 1.0e9;
-                now.tv_usec  = start_tv.tv_usec % 1000;
+                time_elapsed = (now.tv_sec - start_tv.tv_sec) * 1000000 + (now.tv_usec - start_tv.tv_usec);
+                now.tv_sec   = time_elapsed / 1000000;
+                now.tv_usec  = time_elapsed % 1000000;
             }
             format_time(timebuffer, config.format, &now, config.include_ms);
             printf("[%s] ", timebuffer);

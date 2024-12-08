@@ -16,7 +16,7 @@ void print_helppage(char *command) {
     printf("    -c\t\t\tDisplay time as current time instead of how much time has elapsed.\n");
     printf("    -m\t\t\tDisplay milliseconds also.\n");
     // Can also been seen via https://www.man7.org/linux/man-pages/man3/strftime.3.html
-    printf("    -f [format]\t\tDisplay as custom format, based on strftime. See man 3 strftime.\n");
+    printf("    -f [format]\t\tDisplay as custom format, based on strftime.\n");
     exit(0);
 }
 

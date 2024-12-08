@@ -51,14 +51,17 @@ int main(int argc, char **argv) {
     // Time when we start the streaming, only used if clock is disabled
     struct timeval start_tv = get_timeval_now();
 
+    time_t time_elapsed;
+
     // Reads data, writes to buffer and handles it until the stream is over
     while(fgets(buffer, BUFFER_CHUNK_SIZE, stdin) != NULL) {
         // If there is a new line, print the prefix
         if(is_new_line) {
             struct timeval now = get_timeval_now();
             if(!config.is_clock) {
-                now.tv_sec -= start_tv.tv_sec;
-                now.tv_usec -= start_tv.tv_usec;
+                time_elapsed = (now.tv_sec - start_tv.tv_sec) * 1.0e9 + (now.tv_usec - start_tv.tv_usec);
+                now.tv_sec   = time_elapsed / 1.0e9;
+                now.tv_usec  = start_tv.tv_usec % 1000;
             }
             format_time(timebuffer, config.format, &now, config.include_ms);
             printf("[%s] ", timebuffer);
